@@ -18,6 +18,10 @@ export interface QuerySearchResult {
   name: string
 }
 
+/**
+ * @description Search over 70,000 symbols by symbol name or company name, including cryptocurrencies, forex, stocks, etf and other financial instruments.
+ * @link https://site.financialmodelingprep.com/developer/docs#general-search-company-search
+ */
 export const query = async ({ params }: QuerySearchRequest): Promise<QuerySearchResult[]> => {
   const API_PATH = '/search'
 

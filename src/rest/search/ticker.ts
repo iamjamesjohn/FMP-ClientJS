@@ -18,6 +18,10 @@ export interface TickerSearchResult {
   name: string
 }
 
+/**
+ * @description Find ticker symbols and exchanges for both equity securities and exchange-traded funds (ETFs) by searching with the company name or ticker symbol.
+ * @link https://site.financialmodelingprep.com/developer/docs#ticker-search-company-search
+ */
 export const ticker = async ({ params }: TickerSearchRequest): Promise<TickerSearchResult[]> => {
   const API_PATH = '/search-ticker'
 
