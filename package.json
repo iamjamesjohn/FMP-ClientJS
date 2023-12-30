@@ -2,14 +2,17 @@
   "name": "fmp-clientjs",
   "version": "0.0.1",
   "description": "Isomorphic Javascript client for financialmodelingprep.com Stocks, Forex, and Crypto APIs",
+  "private": false,
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "start": "npm run build && node dist/index.js",
+    "format": "prettier --write \"src/**/*.{ts,md}\" --config ./.prettierrc.json",
     "build": "rm -rf ./dist && tsup src/index.ts --format cjs,esm --dts",
-    "start:dev": "npx nodemon",
-    "lint": "tsc"
+    "start": "npm run build && node dist/index.js",
+    "lint:fix": "eslint --fix \"src/**/*.{ts}\"",
+    "lint": "eslint \"src/**/*.{ts,js}\"",
+    "start:dev": "npx nodemon"
   },
   "keywords": [
     "financialmodelingprep.com",
@@ -22,7 +25,16 @@
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^20.10.6",
+    "@typescript-eslint/eslint-plugin": "^6.16.0",
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-standard-with-typescript": "^43.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-prettier": "^5.1.2",
+    "eslint-plugin-promise": "^6.1.1",
     "nodemon": "^3.0.2",
+    "prettier": "^3.1.1",
     "ts-node": "^10.9.2",
     "tsup": "^8.0.1",
     "typescript": "^5.3.3"
