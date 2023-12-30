@@ -1,12 +1,11 @@
-import { axios } from '../../axios'
+import { axios } from '../../utils/axios'
 
 // Request
 export interface NameSearchRequest {
-  params: {
-    exchange?: string
-    limit?: number
-    query: string
-  }
+  // Query variables
+  exchange?: string
+  limit?: number
+  query: string
 }
 
 // Response
@@ -22,7 +21,7 @@ export interface NameSearchResult {
  * @description Find ticker symbols and exchange information for equity securities and exchange-traded funds (ETFs) by searching with the company name.
  * @link https://site.financialmodelingprep.com/developer/docs#name-search-company-search
  */
-export const name = async ({ params }: NameSearchRequest): Promise<NameSearchResult[]> => {
+export const name = async (params: NameSearchRequest): Promise<NameSearchResult[]> => {
   const API_PATH = '/search-name'
 
   const { data, status } = await axios().get<NameSearchResult[]>(API_PATH, {

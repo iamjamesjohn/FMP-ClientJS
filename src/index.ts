@@ -1,6 +1,6 @@
 import restClient, { type RestClient } from './rest'
 
-export * from './axios'
+export * from './utils/axios'
 
 export const fmp = (): RestClient => restClient()
 

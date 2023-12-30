@@ -1,12 +1,11 @@
-import { axios } from '../../axios'
+import { axios } from '../../utils/axios'
 
 // Request
 export interface TickerSearchRequest {
-  params: {
-    exchange?: string
-    limit?: number
-    query: string
-  }
+  // Query variables
+  exchange?: string
+  limit?: number
+  query: string
 }
 
 // Response
@@ -22,7 +21,7 @@ export interface TickerSearchResult {
  * @description Find ticker symbols and exchanges for both equity securities and exchange-traded funds (ETFs) by searching with the company name or ticker symbol.
  * @link https://site.financialmodelingprep.com/developer/docs#ticker-search-company-search
  */
-export const ticker = async ({ params }: TickerSearchRequest): Promise<TickerSearchResult[]> => {
+export const ticker = async (params: TickerSearchRequest): Promise<TickerSearchResult[]> => {
   const API_PATH = '/search-ticker'
 
   const { data, status } = await axios().get<TickerSearchResult[]>(API_PATH, {

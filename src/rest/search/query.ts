@@ -1,12 +1,11 @@
-import { axios } from '../../axios'
+import { axios } from '../../utils/axios'
 
 // Request
 export interface QuerySearchRequest {
-  params: {
-    exchange?: string
-    limit?: number
-    query: string
-  }
+  // Query variables
+  exchange?: string
+  limit?: number
+  query: string
 }
 
 // Response
@@ -22,7 +21,7 @@ export interface QuerySearchResult {
  * @description Search over 70,000 symbols by symbol name or company name, including cryptocurrencies, forex, stocks, etf and other financial instruments.
  * @link https://site.financialmodelingprep.com/developer/docs#general-search-company-search
  */
-export const query = async ({ params }: QuerySearchRequest): Promise<QuerySearchResult[]> => {
+export const query = async (params: QuerySearchRequest): Promise<QuerySearchResult[]> => {
   const API_PATH = '/search'
 
   const { data, status } = await axios().get<QuerySearchResult[]>(API_PATH, {

@@ -1,10 +1,9 @@
-import { axios } from '../../axios'
+import { axios } from '../../utils/axios'
 
 // Request
 export interface CIKSearchRequest {
-  path: {
-    cik: string
-  }
+  // Path variables
+  cik: string
 }
 
 // Response
@@ -17,8 +16,8 @@ export interface CIKSearchResult {
  * @description Quickly find registered company names linked to SEC-registered entities using their CIK Number with our CIK Search..
  * @link https://site.financialmodelingprep.com/developer/docs#cik-search-company-search
  */
-export const cik = async ({ path }: CIKSearchRequest): Promise<CIKSearchResult[]> => {
-  const API_PATH = `/cik/${path.cik}`
+export const cik = async (params: CIKSearchRequest): Promise<CIKSearchResult[]> => {
+  const API_PATH = `/cik/${params.cik}`
 
   const { data, status } = await axios().get<CIKSearchResult[]>(API_PATH)
 
