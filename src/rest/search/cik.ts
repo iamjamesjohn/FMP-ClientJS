@@ -14,7 +14,7 @@ export interface CIKSearchResult {
 }
 
 /**
- * @description Quickly find registered company names linked to SEC-registered entities using their CIK Number with our CIK Search.
+ * @description Quickly find registered company names linked to SEC-registered entities using their CIK Number with our CIK Search..
  * @link https://site.financialmodelingprep.com/developer/docs#cik-search-company-search
  */
 export const cik = async ({ path }: CIKSearchRequest): Promise<CIKSearchResult[]> => {
