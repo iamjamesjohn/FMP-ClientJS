@@ -1,21 +1,23 @@
 {
- "include": ["src"],
- "exclude": ["node_modules", "dist"],
- "compilerOptions": {
-  "lib": ["ESNext"],
-  "module": "ESNext",
-  "sourceMap": true,
-  "importHelpers": true,
-  "declaration": true,
-  "rootDir": "./src",
-  "outDir": "./dist",
-  "strict": true,
-  "noImplicitReturns": true,
-  "noUnusedLocals": true,
-  "noUnusedParameters": true,
-  "moduleResolution": "node",
-  "esModuleInterop": true,
-  "skipLibCheck": true,
-  "forceConsistentCasingInFileNames": true
- }
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"],
+  "ts-node": { "esm": true, "experimentalSpecifierResolution": "node" },
+  "compilerOptions": {
+    "target": "ES6",
+    "lib": ["ESNext"],
+    "module": "ESNext",
+    "sourceMap": true,
+    "importHelpers": true,
+    "declaration": true,
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "strict": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  }
 }

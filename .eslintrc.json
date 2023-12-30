@@ -24,6 +24,7 @@
     "import/extensions": ["error", "ignorePackages", { "ts": "never" }],
     "prettier/prettier": ["error", { "endOfLine": "auto" }],
     "@typescript-eslint/no-use-before-define": ["error"],
+    "@typescript-eslint/promise-function-async": "off",
     "@typescript-eslint/no-shadow": ["error"],
     "import/prefer-default-export": "off",
     "no-use-before-define": [2, "nofunc"],
@@ -38,7 +39,9 @@
   },
   "settings": {
     "import/resolver": {
-      "typescript": {}
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
     }
   }
 }
