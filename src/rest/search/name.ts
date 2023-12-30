@@ -3,9 +3,9 @@ import { axios } from '../../axios'
 // Request
 export interface NameSearchRequest {
   params: {
+    exchange?: string
     limit?: number
     query: string
-    exchange?: string
   }
 }
 
