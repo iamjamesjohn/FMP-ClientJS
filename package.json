@@ -4,7 +4,10 @@
   "description": "Isomorphic Javascript client for financialmodelingprep.com Stocks, Forex, and Crypto APIs",
   "main": "index.js",
   "scripts": {
-    "build": "tsup src/index.ts --format cjs,esm --dts"
+    "start": "npm run build && node dist/index.js",
+    "build": "rm -rf ./dist && tsup src/index.ts --format cjs,esm --dts",
+    "start:dev": "npx nodemon",
+    "lint": "tsc"
   },
   "keywords": [
     "financialmodelingprep.com",
@@ -17,6 +20,7 @@
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^20.10.6",
+    "nodemon": "^3.0.2",
     "ts-node": "^10.9.2",
     "tsup": "^8.0.1",
     "typescript": "^5.3.3"
