@@ -1,6 +1,10 @@
 {
   "etf": {
-    "list": "/v3/etf/list"
+    "country-weightings": "/v3/etf-country-weightings",
+    "sector-weightings": "/v3/etf-sector-weightings",
+    "holdings": "/v3/etf-holder",
+    "list": "/v3/etf/list",
+    "info": "/v4/etf-info"
   },
   "search": {
     "ticker": "/v3/search-ticker",
@@ -139,10 +143,6 @@
     "Standard Deviation",
     "ETF Holding dates",
     "ETF Holdings",
-    "ETF Holder",
-    "ETF Information",
-    "ETF Sector Weighting",
-    "ETF Country Weighting",
     "ETF Sector Exposure",
     "Mutual Fund dates",
     "Mutual Funds",
