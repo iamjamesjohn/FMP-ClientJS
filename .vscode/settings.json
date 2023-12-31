@@ -1,3 +1,3 @@
 {
-  "conventionalCommits.scopes": ["search", "Stocks", "Stock Financials", "Documentation"]
+  "conventionalCommits.scopes": ["Search", "Stocks", "Stock Financials", "Documentation"]
 }

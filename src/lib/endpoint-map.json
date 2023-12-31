@@ -1,0 +1,20 @@
+{
+  "etf": {
+    "list": "/etf/list"
+  },
+  "search": {
+    "ticker": "/search-ticker",
+    "cikName": "/cik-search",
+    "name": "/search-name",
+    "query": "/query",
+    "cusip": "/cusip",
+    "cik": "/cik"
+  },
+  "stocks": {
+    "list": "/stock/list",
+    "profiles": "/profile",
+    "financial": {
+      "statementSymbolList": "/financial-statement-symbol-lists"
+    }
+  }
+}

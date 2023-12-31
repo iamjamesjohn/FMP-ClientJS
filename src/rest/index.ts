@@ -1,12 +1,10 @@
-import { searchClient, type SearchClient } from './search'
-import { stocksClient, type StocksClient } from './stocks'
-import { etfClient, type ETFClient } from './etfs'
+import { searchClient } from './search'
+import { stocksClient } from './stocks'
+import { etfClient } from './etfs'
 
-export interface RestClient {
-  search: SearchClient
-  stocks: StocksClient
-  etf: ETFClient
-}
+import type { RestClient } from './types.d'
+
+export * from './types.d'
 
 export const restClient: RestClient = {
   search: searchClient(),

@@ -1,24 +1,101 @@
-import { cikName, type CIKNameSearchResult, type CIKNameSearchRequest } from './cik-name'
-import { ticker, type TickerSearchResult, type TickerSearchRequest } from './ticker'
-import { query, type QuerySearchResult, type QuerySearchRequest } from './query'
-import { cusip, type CusipSearchResult, type CusipSearchRequest } from './cusip'
-import { name, type NameSearchResult, type NameSearchRequest } from './name'
-import { cik, type CIKSearchResult, type CIKSearchRequest } from './cik'
+import endpoints from '../../lib/endpoint-map.json'
+import { axios } from '../../utils/axios'
+import type {
+  CIKNameSearchRequest,
+  CIKNameSearchResult,
+  CusipSearchRequest,
+  CusipSearchResult,
+  CIKSearchRequest,
+  CIKSearchResult,
+  SearchRequest,
+  SearchResult,
+  SearchClient
+} from './types.d'
 
-export * from './cik-name'
-export * from './ticker'
-export * from './query'
-export * from './cusip'
-export * from './name'
-export * from './cik'
+export * from './types.d'
 
-export interface SearchClient {
-  cikName: (args: CIKNameSearchRequest) => Promise<CIKNameSearchResult[]>
-  ticker: (args: TickerSearchRequest) => Promise<TickerSearchResult[]>
-  query: (args: QuerySearchRequest) => Promise<QuerySearchResult[]>
-  cusip: (args: CusipSearchRequest) => Promise<CusipSearchResult[]>
-  name: (args: NameSearchRequest) => Promise<NameSearchResult[]>
-  cik: (args: CIKSearchRequest) => Promise<CIKSearchResult[]>
+/**
+ * @description Discover CIK numbers for SEC-registered entities with our CIK Name Search.
+ * @link https://site.financialmodelingprep.com/developer/docs#cik-name-search-company-search
+ */
+export const cikName = async (params: CIKNameSearchRequest): Promise<CIKNameSearchResult[]> => {
+  const { data, status } = await axios().get<CIKNameSearchResult[]>(
+    `${endpoints.search.cikName}/${params.companyName}`
+  )
+
+  if (status !== 200) throw new Error(`FinancialModelingPrep responded with status code: ${status}`)
+
+  return data
+}
+
+/**
+ * @description Quickly find registered company names linked to SEC-registered entities using their CIK Number with our CIK Search..
+ * @link https://site.financialmodelingprep.com/developer/docs#cik-search-company-search
+ */
+export const cik = async (params: CIKSearchRequest): Promise<CIKSearchResult[]> => {
+  const { data, status } = await axios().get<CIKSearchResult[]>(
+    `${endpoints.search.cik}/${params.cik}`
+  )
+
+  if (status !== 200) throw new Error(`FinancialModelingPrep responded with status code: ${status}`)
+
+  return data
+}
+
+/**
+ * @description Access information about financial instruments and securities by simply entering their unique CUSIP (Committee on Uniform Securities Identification Procedures) numbers with our CUSIP Search.
+ * @link https://site.financialmodelingprep.com/developer/docs#cusip-search-company-search
+ */
+export const cusip = async (params: CusipSearchRequest): Promise<CusipSearchResult[]> => {
+  const { data, status } = await axios().get<CusipSearchResult[]>(
+    `${endpoints.search.cusip}/${params.cusip}`
+  )
+
+  if (status !== 200) throw new Error(`FinancialModelingPrep responded with status code: ${status}`)
+
+  return data
+}
+
+/**
+ * @description Find ticker symbols and exchange information for equity securities and exchange-traded funds (ETFs) by searching with the company name.
+ * @link https://site.financialmodelingprep.com/developer/docs#name-search-company-search
+ */
+export const name = async (params: SearchRequest): Promise<SearchResult[]> => {
+  const { data, status } = await axios().get<SearchResult[]>(endpoints.search.name, {
+    params
+  })
+
+  if (status !== 200) throw new Error(`FinancialModelingPrep responded with status code: ${status}`)
+
+  return data
+}
+
+/**
+ * @description Search over 70,000 symbols by symbol name or company name, including cryptocurrencies, forex, stocks, etf and other financial instruments.
+ * @link https://site.financialmodelingprep.com/developer/docs#general-search-company-search
+ */
+export const query = async (params: SearchRequest): Promise<SearchResult[]> => {
+  const { data, status } = await axios().get<SearchResult[]>(endpoints.search.query, {
+    params
+  })
+
+  if (status !== 200) throw new Error(`FinancialModelingPrep responded with status code: ${status}`)
+
+  return data
+}
+
+/**
+ * @description Find ticker symbols and exchanges for both equity securities and exchange-traded funds (ETFs) by searching with the company name or ticker symbol.
+ * @link https://site.financialmodelingprep.com/developer/docs#ticker-search-company-search
+ */
+export const ticker = async (params: SearchRequest): Promise<SearchResult[]> => {
+  const { data, status } = await axios().get<SearchResult[]>(endpoints.search.ticker, {
+    params
+  })
+
+  if (status !== 200) throw new Error(`FinancialModelingPrep responded with status code: ${status}`)
+
+  return data
 }
 
 export const searchClient = (): SearchClient => ({
