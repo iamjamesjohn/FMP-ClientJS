@@ -4,7 +4,11 @@ This module is a node wrapper for the [Financial Modeling Prep API](https://site
 
 ## About FinancialModelingPrep
 
-Financial Modeling Prep API provides real time stock price, company financial statements, major index prices, stock historical data, forex real time rate and cryptocurrencies. Financial Modeling Prep stock price API is in real time, the company reports can be found in quarter or annual format, and goes up to 30 years back in history.. The complete API documentation is available [here](https://site.financialmodelingprep.com/developer/docs)..
+Financial Modeling Prep API provides real time stock price, company financial statements, major index prices, stock historical data, forex real time rate and cryptocurrencies.
+
+Financial Modeling Prep stock price API is in real time, the company reports can be found in quarter or annual format, and goes up to 30 years back in history.
+
+The complete API documentation is available [here](https://site.financialmodelingprep.com/developer/docs)..
 
 I have no affiliation with FinancialModelingPrep and its web API development.
 
@@ -28,8 +32,11 @@ const results = await fmp.search.query({ query: 'AAPL', limit: 10 })
 Accessed through `fmp.stocks.{method_name}`
 
 ```js
-profiles() // /profile
-list() // /stock/list
+// API route: /profile
+profiles()
+
+// API route: /stock/list
+list()
 ```
 
 ### Financials
@@ -37,7 +44,8 @@ list() // /stock/list
 Accessed through `fmp.stocks.financial.{method_name}`
 
 ```js
-statementSymbolList() // /financial-statement-symbol-lists
+// API route: /financial-statement-symbol-lists
+statementSymbolList()
 ```
 
 ### ETF
@@ -45,7 +53,8 @@ statementSymbolList() // /financial-statement-symbol-lists
 Accessed through `fmp.etf.{method_name}`
 
 ```js
-list() // /etf/list
+// API route: /etf/list
+list()
 ```
 
 ### Search
@@ -53,12 +62,23 @@ list() // /etf/list
 Accessed through `fmp.search.{method_name}`
 
 ```js
-cikName() // /cik-search
-cik() // /cik
-cusip() // /cusip
-name() // /search-name
-query() // /search
-ticker() // /search-ticker
+// API route: /cik-search
+cikName()
+
+// API route: /cik
+cik()
+
+// API route: /cusip
+cusip()
+
+// API route: /search-name
+name()
+
+// API route: /search
+query()
+
+// API route: /search-ticker
+ticker()
 ```
 
 # Contributing
