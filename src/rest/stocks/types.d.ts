@@ -51,8 +51,17 @@ export interface ProfileResult {
   dcf: number
 }
 
+export interface TradeableResult {
+  exchangeShortName: string
+  exchange: string
+  symbol: string
+  price: number
+  name: string
+}
+
 export interface StocksClient {
   profiles: (args: ProfileRequest) => Promise<ProfileResult[]>
+  tradeable: () => Promise<TradeableResult[]>
   list: () => Promise<ListResult[]>
   financial: FinancialClient
 }
