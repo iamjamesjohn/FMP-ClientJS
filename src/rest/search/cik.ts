@@ -1,6 +1,6 @@
 import { axios } from '../../utils/axios'
-import endpoints from '../../lib/endpoint-map.json'
-import type { CIKSearchRequest, CIKSearchResult } from './types.d'
+import endpoints from '../../json/endpoint-map.json' assert { type: 'json' }
+import type { CIKSearchRequest, CIKSearchResult } from './types'
 
 /**
  * @description Quickly find registered company names linked to SEC-registered entities using their CIK Number with our CIK Search..

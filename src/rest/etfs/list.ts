@@ -1,7 +1,6 @@
-import endpoints from '../../lib/endpoint-map.json'
-
+import endpoints from '../../json/endpoint-map.json' assert { type: 'json' }
 import { axios } from '../../utils/axios'
-import type { ListResult } from './types.d'
+import type { ListResult } from './types'
 
 /**
  * @description Find symbols for traded and non-traded ETFs with our ETF List..

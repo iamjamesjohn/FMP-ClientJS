@@ -1,6 +1,6 @@
 import { axios } from '../../utils/axios'
-import endpoints from '../../lib/endpoint-map.json'
-import type { CusipSearchRequest, CusipSearchResult } from './types.d'
+import endpoints from '../../json/endpoint-map.json' assert { type: 'json' }
+import type { CusipSearchRequest, CusipSearchResult } from './types'
 
 /**
  * @description Access information about financial instruments and securities by simply entering their unique CUSIP (Committee on Uniform Securities Identification Procedures) numbers with our CUSIP Search.

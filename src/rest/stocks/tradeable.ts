@@ -1,6 +1,6 @@
 import { axios } from '../../utils/axios'
-import endpoints from '../../lib/endpoint-map.json'
-import type { TradeableResult } from './types.d'
+import endpoints from '../../json/endpoint-map.json' assert { type: 'json' }
+import type { TradeableResult } from './types'
 
 /**
  * @description Discover all actively traded stocks with our Tradable Search feature. This comprehensive list includes over 70,000 stocks, with symbol, name, price, and exchange information for each company.

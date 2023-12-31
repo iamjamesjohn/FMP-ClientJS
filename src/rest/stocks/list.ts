@@ -1,6 +1,6 @@
 import { axios } from '../../utils/axios'
-import endpoints from '../../lib/endpoint-map.json'
-import type { ListResult } from './types.d'
+import endpoints from '../../json/endpoint-map.json' assert { type: 'json' }
+import type { ListResult } from './types'
 
 /**
  * @description Find symbols for traded and non-traded stocks with our Symbol List. This comprehensive list includes over 25,000 stocks, making it the perfect resource for investors and traders of all levels.

@@ -1,6 +1,6 @@
 import { axios } from '../../utils/axios'
-import endpoints from '../../lib/endpoint-map.json'
-import type { SearchRequest, SearchResult } from './types.d'
+import endpoints from '../../json/endpoint-map.json' assert { type: 'json' }
+import type { SearchRequest, SearchResult } from './types'
 
 /**
  * @description Search over 70,000 symbols by symbol name or company name, including cryptocurrencies, forex, stocks, etf and other financial instruments.

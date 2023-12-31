@@ -1,5 +1,5 @@
 import { axios } from '../../utils/axios'
-import endpoints from '../../lib/endpoint-map.json'
+import endpoints from '../../json/endpoint-map.json' assert { type: 'json' }
 
 /**
  * @description This endpoint allows you to get a list of all companies for which the API has financial statements.

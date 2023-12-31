@@ -13,9 +13,7 @@ import type {
   CusipSearchResult,
   SearchRequest,
   SearchResult
-} from './types.d'
-
-export * from './types.d'
+} from './types'
 
 export interface SearchClient {
   cikName: (args: CIKNameSearchRequest) => Promise<CIKNameSearchResult[]>

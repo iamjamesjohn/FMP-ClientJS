@@ -1,8 +1,6 @@
 import { list } from './list'
 
-import type { ListResult } from './types.d'
-
-export * from './types.d'
+import type { ListResult } from './types'
 
 export interface ETFClient {
   list: () => Promise<ListResult[]>

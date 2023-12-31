@@ -1,22 +1,26 @@
 {
   "etf": {
-    "list": "/etf/list"
+    "list": "/v3/etf/list"
   },
   "search": {
-    "ticker": "/search-ticker",
-    "cikName": "/cik-search",
-    "name": "/search-name",
-    "query": "/query",
-    "cusip": "/cusip",
-    "cik": "/cik"
+    "ticker": "/v3/search-ticker",
+    "cikName": "/v3/cik-search",
+    "name": "/v3/search-name",
+    "query": "/v3/query",
+    "cusip": "/v3/cusip",
+    "cik": "/v3/cik"
   },
   "stocks": {
-    "tradeable": "/available-traded/list",
-    "profiles": "/profile",
-    "list": "/stock/list",
+    "tradeable": "/v3/available-traded/list",
+    "peers": "/v4/stock_peers",
+    "profiles": "/v3/profile",
+    "list": "/v3/stock/list",
     "financial": {
-      "statementSymbolList": "/financial-statement-symbol-lists"
+      "statementSymbolList": "/v3/financial-statement-symbol-lists"
     }
+  },
+  "misc": {
+    "marketOpen": "/v3/is-the-market-open"
   },
   "todo": [
     "Commitment of traders report",
@@ -42,8 +46,6 @@
     "Analyst Estimates",
     "Analyst Recommendation",
     "Company Outlook",
-    "Stock Peers",
-    "Market Open",
     "Delisted Companies",
     "Full Quote",
     "Quote Order",

@@ -1,8 +1,8 @@
 import { axios } from '../../utils/axios'
-import endpoints from '../../lib/endpoint-map.json'
-import type { SearchRequest, SearchResult } from './types.d'
+import endpoints from '../../json/endpoint-map.json' assert { type: 'json' }
+import type { SearchRequest, SearchResult } from './types'
 
-export * from './types.d'
+export * from './types'
 
 /**
  * @description Find ticker symbols and exchange information for equity securities and exchange-traded funds (ETFs) by searching with the company name.

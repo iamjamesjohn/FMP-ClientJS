@@ -1,5 +1,3 @@
-import type { FinancialClient } from '../financial'
-
 export interface ListResult {
   exchangeShortName: string
   exchange: string
@@ -57,4 +55,13 @@ export interface TradeableResult {
   symbol: string
   price: number
   name: string
+}
+
+export interface PeersRequest {
+  symbols: string[]
+}
+
+export interface PeersResult {
+  peersList: string[]
+  symbol: string
 }
