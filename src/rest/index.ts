@@ -8,10 +8,10 @@ export interface RestClient {
   etf: ETFClient
 }
 
-export const restClient = (): RestClient => ({
+export const restClient: RestClient = {
   search: searchClient(),
   stocks: stocksClient(),
   etf: etfClient()
-})
+}
 
 export default restClient

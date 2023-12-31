@@ -11,6 +11,6 @@ export interface StocksClient {
 
 export const stocksClient = (): StocksClient => ({
   financial: financialClient(),
-  profiles: (...args) => profiles(...args),
+  profiles: (args) => profiles(args),
   list: (...args) => list(...args)
 })
