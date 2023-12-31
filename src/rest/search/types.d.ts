@@ -39,12 +39,3 @@ export interface CIKNameSearchResult {
   name: string
   cik: string
 }
-
-export interface SearchClient {
-  cikName: (args: CIKNameSearchRequest) => Promise<CIKNameSearchResult[]>
-  cusip: (args: CusipSearchRequest) => Promise<CusipSearchResult[]>
-  cik: (args: CIKSearchRequest) => Promise<CIKSearchResult[]>
-  ticker: (args: SearchRequest) => Promise<SearchResult[]>
-  query: (args: SearchRequest) => Promise<SearchResult[]>
-  name: (args: SearchRequest) => Promise<SearchResult[]>
-}

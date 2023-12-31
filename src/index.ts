@@ -1,4 +1,4 @@
-import restClient, { type RestClient } from './rest'
+import { type RestClient, restClient } from './rest'
 
 export * from './utils/axios'
 

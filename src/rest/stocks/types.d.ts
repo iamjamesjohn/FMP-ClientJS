@@ -58,10 +58,3 @@ export interface TradeableResult {
   price: number
   name: string
 }
-
-export interface StocksClient {
-  profiles: (args: ProfileRequest) => Promise<ProfileResult[]>
-  tradeable: () => Promise<TradeableResult[]>
-  list: () => Promise<ListResult[]>
-  financial: FinancialClient
-}

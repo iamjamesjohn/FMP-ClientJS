@@ -5,7 +5,3 @@ export interface ListResult {
   price: number
   name: string
 }
-
-export interface ETFClient {
-  list: () => Promise<ListResult[]>
-}
