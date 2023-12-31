@@ -12,9 +12,7 @@
     "skipLibCheck": false,
     "forceConsistentCasingInFileNames": true,
     "outDir": "./dist",
-    "baseUrl": "./",
     "paths": {
-      "*": ["src/*"],
       "json/*": ["./src/json/*"]
     },
     "noImplicitAny": true,

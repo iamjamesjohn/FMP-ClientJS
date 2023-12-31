@@ -1,11 +1,4 @@
 {
-  "etf": {
-    "country-weightings": "/v3/etf-country-weightings",
-    "sector-weightings": "/v3/etf-sector-weightings",
-    "holdings": "/v3/etf-holder",
-    "list": "/v3/etf/list",
-    "info": "/v4/etf-info"
-  },
   "search": {
     "ticker": "/v3/search-ticker",
     "cikName": "/v3/cik-search",
@@ -18,10 +11,10 @@
     "tradeable": "/v3/available-traded/list",
     "peers": "/v4/stock_peers",
     "profiles": "/v3/profile",
-    "list": "/v3/stock/list",
-    "financial": {
-      "statementSymbolList": "/v3/financial-statement-symbol-lists"
-    }
+    "list": "/v3/stock/list"
+  },
+  "quotes": {
+    "full": "/v3/quote"
   },
   "misc": {
     "marketOpen": "/v3/is-the-market-open"
@@ -51,7 +44,6 @@
     "Analyst Recommendation",
     "Company Outlook",
     "Delisted Companies",
-    "Full Quote",
     "Quote Order",
     "Simple Quote",
     "OTC Quote",

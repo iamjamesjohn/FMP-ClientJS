@@ -1,4 +1,9 @@
-import { statementSymbolList } from './statement-symbol-list'
+import { request } from '../../utils/request'
+
+export const statementSymbolList = async () =>
+  await request<string[]>({
+    apiPath: '/v3/financial-statement-symbol-lists/'
+  })
 
 export interface FinancialClient {
   statementSymbolList: () => Promise<string[]>
